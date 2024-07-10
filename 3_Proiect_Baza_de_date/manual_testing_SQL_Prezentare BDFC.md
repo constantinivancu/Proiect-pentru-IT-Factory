@@ -1,4 +1,4 @@
-<h1>Database Project for Baza date facultate</h1>
+<h1>Database Project for BDFC</h1>
 
 The scope of this project is to use all the SQL knowledge gained throught the Software Testing course and apply them in practice.
 
@@ -12,6 +12,8 @@ Database description: **Scopul acestei baze de date este de a gestiona activitat
 <li>Database Schema </li>
 <br>
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
+![image](https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/aaa7b22e-e2e2-40df-bef6-59f82c8e96ef)
+
 
 The tables are connected in the following way:
 
