@@ -13,11 +13,12 @@ Database description: **The purpose of this database is to manage the teaching a
 <br>
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
   
-
+<center><align=center> <ul><img width="703" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/eed44531-e3b3-48ac-9bfa-f9c535826e62">
+</ul></center>
 
 The tables are connected in the following way:
 
-<ul>
+
   <li>The first table is <b>Test</b>, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
   <li> Table <b>Departments</b> is connected with table <b>Professors</b> through a 1:n relationship which was implemented through Departments.
     department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Professors.department_id INT,
