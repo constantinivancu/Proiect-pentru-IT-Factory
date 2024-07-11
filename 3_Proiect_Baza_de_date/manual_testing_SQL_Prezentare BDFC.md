@@ -17,14 +17,25 @@ You can find below the database schema that was generated through Reverse Engine
 The tables are connected in the following way:
 
 <ul>
-  <li>Prima tabela este Test, si are rol de a testa diverse comenzi DDL (ALTER, TRUNCATE, DROP,etc )</li>
-  <li> ** nume tabela 1**  is connected with **nume tabela 2** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
-  <li> **nume tabela 3**  is connected with **nume tabela 4** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
-  <li> **nume tabela 5**  is connected with **nume tabela 6** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
-  ...........
+  <li>The first table is Test, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
+  <li> Table Departments is connected with table professors through a 1:n relationship which was implemented through Departments.
+    department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Professors.department_id INT,
+    FOREIGN KEY as a foreign key</li>
+  <li> Table Professor  is connected with table Grades through a 1:n relationship which was implemented through Professors.
+    professor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.professor_id INT FOREIGN KEY as a foreign key</li>
+  <li> Table Students is connected with table Grades through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.student_id INT FOREIGN KEY as a foreign key</li>
+  <li> Table Objects is connected with table Grades through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.object_id INT FOREIGN KEY as a foreign key</li>
+</ul><br>
   <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
 </ul><br>
-
+  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+</ul><br>
+  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+</ul><br>
+  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+</ul><br>
+<li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+</ul><br>
 <li>Database Queries</li><br>
 
 <ol type="a">
