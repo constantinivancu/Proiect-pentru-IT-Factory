@@ -18,7 +18,7 @@ You can find below the database schema that was generated through Reverse Engine
 The tables are connected in the following way:
 
 <ul>
-  <li>The first table is **Test**, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
+  <li>The first table is <b>Test</b>, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
   <li> Table Departments is connected with table professors through a 1:n relationship which was implemented through Departments.
     department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Professors.department_id INT,
     FOREIGN KEY as a foreign key</li>
