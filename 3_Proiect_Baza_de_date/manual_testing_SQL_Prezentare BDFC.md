@@ -6,7 +6,7 @@ Application under test: **BDFC**
 
 Tools used: MySQL Workbench
 
-Database description: **Scopul acestei baze de date este de a gestiona activitatea didactică din cadrul unei facultati imaginare. Toate datele inserate sunt fictive**
+Database description: **The purpose of this database is to manage the teaching activity within an imaginary faculty. All data inserted is fictitious**
 
 <ol>
 <li>Database Schema </li>
@@ -18,7 +18,7 @@ You can find below the database schema that was generated through Reverse Engine
 The tables are connected in the following way:
 
 <ul>
-  <li>The first table is Test, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
+  <li>The first table is **Test**, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
   <li> Table Departments is connected with table professors through a 1:n relationship which was implemented through Departments.
     department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Professors.department_id INT,
     FOREIGN KEY as a foreign key</li>
