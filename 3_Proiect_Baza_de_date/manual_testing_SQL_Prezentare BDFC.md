@@ -13,7 +13,7 @@ Database description: **The purpose of this database is to manage the teaching a
 <br>
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
   
-<img width="703" align= "center" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/9cbad7c7-3c5d-4087-b162-4b5609800d55">
+<center><img width="703" align= "center" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/9cbad7c7-3c5d-4087-b162-4b5609800d55"></center>
 
 The tables are connected in the following way:
 
