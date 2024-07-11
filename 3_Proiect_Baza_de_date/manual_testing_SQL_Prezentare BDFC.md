@@ -12,6 +12,7 @@ Database description: **Scopul acestei baze de date este de a gestiona activitat
 <li>Database Schema </li>
 <br>
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
+<img alt="" align="right" src=<img alt="" align="right" src="/assets_tutorials/img/image.jpg" />  
   
 <img width="703" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/9cbad7c7-3c5d-4087-b162-4b5609800d55">
 
