@@ -27,15 +27,15 @@ The tables are connected in the following way:
 <li> Table <b>Students</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.student_id INT FOREIGN KEY as a foreign key</li>
 <li> Table <b>Objects</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.object_id INT FOREIGN KEY as a foreign key</li>
 </ul><br>
-  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+  <li> Table <b>Students</b> is connected with table <b>Scores</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Scores.student_id INT FOREIGN KEYas a foreign key</li>
 </ul><br>
-  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+  <li> Table <b>Students</b> is connected with table <b>Enrollments</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Enrollments.student_id INT FOREIGN KEY as a foreign key</li>
 </ul><br>
-  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+  <li> Table <b>Objects</b> is connected with table <b>Enrollments</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Enrollments.object_id INT FOREIGN KEY as a foreign key</li>
 </ul><br>
-  <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+  <li> Table <b></b> **nume tabela n**  is connected with table <b></b> **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
 </ul><br>
-<li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
+<li> Table <b></b> **nume tabela n**  is connected with table <b></b> **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
 </ul><br>
 <li>Database Queries</li><br>
 
