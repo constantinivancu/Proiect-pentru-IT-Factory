@@ -18,15 +18,14 @@ You can find below the database schema that was generated through Reverse Engine
 
 The tables are connected in the following way:
 
-
-  <li>The first table is <b>Test</b>, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
-  <li> Table <b>Departments</b> is connected with table <b>Professors</b> through a 1:n relationship which was implemented through Departments.
+<li>The first table is <b>Test</b>, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
+<li> Table <b>Departments</b> is connected with table <b>Professors</b> through a 1:n relationship which was implemented through Departments.
     department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Professors.department_id INT,
     FOREIGN KEY as a foreign key</li>
-  <li> Table <b>Professors</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Professors.
+<li> Table <b>Professors</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Professors.
     professor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.professor_id INT FOREIGN KEY as a foreign key</li>
-  <li> Table <b>Students</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.student_id INT FOREIGN KEY as a foreign key</li>
-  <li> Table <b>Objects</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.object_id INT FOREIGN KEY as a foreign key</li>
+<li> Table <b>Students</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.student_id INT FOREIGN KEY as a foreign key</li>
+<li> Table <b>Objects</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.object_id INT FOREIGN KEY as a foreign key</li>
 </ul><br>
   <li> **nume tabela n**  is connected with **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
 </ul><br>
