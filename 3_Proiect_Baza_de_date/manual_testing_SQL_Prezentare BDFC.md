@@ -4,58 +4,131 @@ The scope of this project is to use all the SQL knowledge gained throught the So
 
 Application under test: **BDFC**
 
-Tools used: MySQL Workbench
+Tools used: **MySQL Workbench**
 
-Database description: **The purpose of this database is to manage the teaching activity within an imaginary faculty. All data inserted is fictitious**
+Database description: **The purpose of this database is to manage the teaching activity within an imaginary faculty.**
 
-<ol>
-<li>Database Schema </li>
-<br>
+
+**Database Schema**
+
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
   
-<center><align=center> <ul><img width="703" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/eed44531-e3b3-48ac-9bfa-f9c535826e62">
-</ul></center>
+<center><ul><img width="703" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/eed44531-e3b3-48ac-9bfa-f9c535826e62">
+</ul></center></li><br>
 
 The tables are connected in the following way:
+<ol type="1">
 
 <li>The first table is <b>Test</b>, and has the role of testing various DDL commands (ALTER, TRUNCATE, DROP, etc.)</li>
 <li> Table <b>Departments</b> is connected with table <b>Professors</b> through a 1:n relationship which was implemented through Departments.
     department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Professors.department_id INT,
-    FOREIGN KEY as a foreign key</li>
+    FOREIGN KEY as a foreign key.</li>
 <li> Table <b>Professors</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Professors.
-    professor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.professor_id INT FOREIGN KEY as a foreign key</li>
-<li> Table <b>Students</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.student_id INT FOREIGN KEY as a foreign key</li>
-<li> Table <b>Objects</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.object_id INT FOREIGN KEY as a foreign key</li>
-</ul><br>
-  <li> Table <b>Students</b> is connected with table <b>Scores</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Scores.student_id INT FOREIGN KEYas a foreign key</li>
-</ul><br>
-  <li> Table <b>Students</b> is connected with table <b>Enrollments</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Enrollments.student_id INT FOREIGN KEY as a foreign key</li>
-</ul><br>
-  <li> Table <b>Objects</b> is connected with table <b>Enrollments</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Enrollments.object_id INT FOREIGN KEY as a foreign key</li>
-</ul><br>
-  <li> Table <b></b> **nume tabela n**  is connected with table <b></b> **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
-</ul><br>
-<li> Table <b></b> **nume tabela n**  is connected with table <b></b> **nume tabela n+1** through a **tip relatie** relationship which was implemented through **nume_tabela.nume_coloana_cheie_primara** as a primary key and **nume_tabela.nume_coloana_cheie_secundara** as a foreign key</li>
-</ul><br>
-<li>Database Queries</li><br>
+    professor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.professor_id INT FOREIGN KEY as a foreign key.</li>
+<li> Table <b>Students</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.student_id INT FOREIGN KEY as a foreign key.</li>
+<li> Table <b>Objects</b> is connected with table <b>Grades</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Grades.object_id INT FOREIGN KEY as a foreign key.</li>
+ <li> Table <b>Students</b> is connected with table <b>Scores</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Scores.student_id INT FOREIGN KEYas a foreign key.</li>
+<li> Table <b>Students</b> is connected with table <b>Enrollments</b> through a 1:n relationship which was implemented through Students.student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Enrollments.student_id INT FOREIGN KEY as a foreign key.</li>
+<li> Table <b>Objects</b> is connected with table <b>Enrollments</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Enrollments.object_id INT FOREIGN KEY as a foreign key.</li>
+<li> Table <b>Objects</b> is connected with table <b>Assessments</b> through a 1:n relationship which was implemented through Objects.object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Assessments.object_id INT FOREIGN KEY as a foreign key.</li>
+<li> Table <b>Assessments</b> is connected with table <b>Scores</b> through a 1:n relationship which was implemented through Assessments.assessment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Scores.assessment_id INT FOREIGN KEY as a foreign key.</li>
+
+<br>
+<b>Database Queries</b>
 
 <ol type="a">
-  <li>DDL (Data Definition Language)</li>
+  
+ <b>DDL (Data Definition Language)</b>
+  The following instructions were written in the scope of <b>CREATING</b> the structure of the database (CREATE INSTRUCTIONS)
+<li>CREATE DATABASE faculty;</li>
+-- USE faculty;
+-- CREATE TABLE Test (
+coloana_A INT PRIMARY KEY,
+coloana_B VARCHAR(20),
+coloana_C INT
+);
+-- CREATE TABLE Departments (
+    department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(100),
+    department_head VARCHAR(100),
+    CONSTRAINT unique_department_head UNIQUE (department_head)
+);
 
-  The following instructions were written in the scope of CREATING the structure of the database (CREATE INSTRUCTIONS)
+-- Create Professors table
+CREATE TABLE Professors (
+    professor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    professor_name VARCHAR(100),
+    professor_email VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
 
-  **Inserati aici toate instructiunile de CREATE pe care le-ati scris, atat create database cat si create table**
+-- Create Students table
+CREATE TABLE Students (
+    student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    student_name VARCHAR(100),
+    student_email VARCHAR(100),
+    date_of_birth DATE
+);
 
-  After the database and the tables have been created, a few ALTER instructions were written in order to update the structure of the database, as described below:
+-- Create Objects (Courses) table
+CREATE TABLE Objects (
+    object_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    object_name VARCHAR(100),
+    object_description TEXT
+);
 
-  **Inserati aici toate instructiunile de ALTER pe care le-ati scris. Incercati sa includeti instructiuni cat mai variate cum ar fi:**
- **- schimbare nume tabela**
- **- adaugare sau stergere coloana**
- **- redenumire coloana**
- **- adaugare proprietati coloana (ex: adaugare auto-increment)**
- **- modificare proprietati coloana (ex: modificare tip de data, modificare pozitie coloana etc)**
- **- adaugare cheie primara sau secundara (daca nu a fost deja adaugata la crearea tabelei)**
- 
+-- Create Grades table
+CREATE TABLE Grades (
+    grade_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    object_id INT,
+    professor_id INT,
+    grade_value DECIMAL(4, 2),
+    grade_date DATE,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (professor_id) REFERENCES Professors(professor_id),
+    FOREIGN KEY (object_id) REFERENCES Objects(object_id)
+);
+-- Create Enrollments table
+CREATE TABLE Enrollments (
+    enrollment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    object_id INT,
+    enrollment_date DATE,
+    completion_status VARCHAR(50),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (object_id) REFERENCES Objects(object_id)
+);
+
+-- Create Assessments table
+CREATE TABLE Assessments (
+    assessment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    object_id INT,
+    assessment_name VARCHAR(100),
+    assessment_date DATE,
+    total_points DECIMAL(6, 2),
+    FOREIGN KEY (object_id) REFERENCES Objects(object_id)
+);
+
+-- Create Scores table
+CREATE TABLE Scores (
+    score_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    assessment_id INT,
+    student_id INT,
+    score_value DECIMAL(5, 2),
+    FOREIGN KEY (assessment_id) REFERENCES Assessments(assessment_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
+  After the database and the tables have been created, a few <b>ALTER</b> instructions were written in order to update the structure of the database, as described below:
+
+ **- schimbare nume tabela**                                                                       ALTER TABLE Test to Test1;</li>
+ **- adaugare sau stergere coloana**                                                               ALTER TABLE Test1 ADD column coloana_D DATE;
+                                                                                                   ALTER TABLE Test1 DROP column coloana E;
+ **- redenumire coloana**                                                                          ALTER TABLE Test1 RENAME column coloana_A to XYZ;
+ **- adaugare proprietati coloana (ex: adaugare auto-increment)**                                  ALTER TABLE Test1 column XYZ INT AUTO_INCREMENT;
+
   
   <li>DML (Data Manipulation Language)</li>
 
@@ -97,7 +170,7 @@ In order to simulate various scenarios that might happen in real life I created 
 
 </ol>
 
-<li>Conclusions</li>
+<b>Conclusions</b>
 
 **Inserati aici o concluzie cu privire la ceea ce ati lucrat, gen lucrurile pe care le-ati invatat, lessons learned, un rezumat asupra a ceea ce ati facut si orice alta informatie care vi se pare relevanta pentru o concluzie finala asupra a ceea ce ati lucrat**
 
