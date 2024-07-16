@@ -399,7 +399,7 @@ SELECT assessment_id, student_id, score_value FROM Scores;
 
 <b>Select students with a specific name</b>
 
-SELECT * FROM Students WHERE student_name =' albert.parker@s.facultate.ro';
+SELECT * FROM Students WHERE student_name =' ' Albert Parker ';
 
 <b>Select professors from a specific department</b>
 
