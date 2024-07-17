@@ -471,14 +471,14 @@ SELECT * FROM Assessments ORDER BY assessment_date DESC LIMIT 5;
 <b> Select students enrolled in both 'Generații și războaie culturale' and 'Abandon–atașament-prevenție și intervenție-Consiliere' </b>
 
 SELECT s.student_name, o.object_name
-FROM Students s
-JOIN Enrollments e ON s.student_id = e.student_id
-JOIN Objects o ON e.object_id = o.object_id
-WHERE o.object_name IN ('Generații și războaie culturale', 'Abandon–atașament-prevenție și intervenție-Consiliere')
-GROUP BY s.student_name
-HAVING COUNT(DISTINCT o.object_id) = 2;
+FROM Students AS s
+INNER JOIN Enrollments AS e 
+ON s.student_id = e.student_id
+JOIN Objects AS o ON e.object_id = o.object_id
+WHERE o.object_name IN ('Generații și războaie culturale', 'Abandon–atașament-prevenție și intervenție-Consiliere');
 
 <b> Select students who scored above 80 in 'Examen Final ' or 'Proiect de curs 1'
+
 SELECT s.student_name, a.assessment_name, sc.score_value
 FROM Students s
 JOIN Scores sc ON s.student_id = sc.student_id
