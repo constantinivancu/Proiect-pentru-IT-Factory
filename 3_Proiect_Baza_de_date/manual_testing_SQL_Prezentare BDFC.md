@@ -307,21 +307,21 @@ VALUES,
 VALUES,
   
 (1, 1, 1, '2024-01-10', 'completed'),\
-(2, 1, 2, '2024-01-15', 'completed'),\
+(2, 1, 2, '2024-01-15', 'in progress'),\
 (3, 2, 1, '2024-01-12', 'completed'),\
-(4, 2, 2, '2024-01-20', 'completed'),\
+(4, 2, 2, '2024-01-20', 'in progress'),\
 (5, 3, 3, '2024-02-01', 'completed'),\
-(6, 3, 4, '2024-02-05', 'completed'),\
+(6, 3, 4, '2024-02-05', 'in progress',\
 (7, 4, 5, '2024-02-10', 'completed'),\
-(8, 4, 6, '2024-02-15', 'completed'),\
+(8, 4, 6, '2024-02-15', 'in progress'),\
 (9, 5, 7, '2024-02-20', 'completed'),\
-(10, 5, 8, '2024-02-25', 'completed'),\
-(11, 6, 9, '2024-03-01', 'completed'),\
-(12, 6, 10, '2024-03-05', 'completed'),\
+(10, 5, 8,'2024-02-25','in progress'),\
+(11, 6, 9,'2024-03-01', 'completed'),\
+(12, 6, 10,'2024-03-05', 'in progress',\
 (13, 7, 1, '2024-03-10', 'completed'),\
-(14, 7, 2, '2024-03-15', 'completed'),\
+(14, 7, 2, '2024-03-15', 'in progress',\
 (15, 8, 3, '2024-03-20', 'completed'),\
-(16, 8, 4, '2024-03-25', 'completed');</li>
+(16, 8, 4, '2024-03-25', 'in progress');</li>
 
 <b>Inserting Assessments</b>
 
@@ -416,7 +416,7 @@ SELECT * FROM Assessments WHERE assessment_name LIKE '%Final%';
 <b> Select enrollments completed in 2024 </b>
 
 SELECT * FROM Enrollments WHERE completion_status = 'completed' AND enrollment_date >= '2024-01-01' AND enrollment_date < '2024-12-01';\
-SELECT * FROM Enrollments WHERE completion_status = 'completed' AND enrollment_date >= '2024-01-01' OR enrollment_date < '2024-12-01';
+SELECT * FROM Enrollments WHERE completion_status = 'in progress' AND (enrollment_date >= '2024-01-01' OR enrollment_date < '2024-06-01');
 
 <b> Count number of students </b>
 
