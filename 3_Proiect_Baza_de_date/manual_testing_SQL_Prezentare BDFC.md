@@ -110,7 +110,7 @@ Create *Objects (Courses)* table
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );``
 
-  <br>After the database and the tables have been created, a few **ALTER** instructions were written in order to update the structure of the database, as described below:
+  ### After the database and the tables have been created, a few **ALTER** instructions were written in order to update the structure of the database, as described below:
   
 ### Adding the date_of_birth column to professors table
  ``ALTER TABLE professors ADD column date_of_birth DATE;``
@@ -129,7 +129,7 @@ Create *Objects (Courses)* table
   Below you can find all the insert instructions that were created in the scope of this project:
 
   
-## Inserting Departaments
+### Inserting Departaments
   
 ``INSERT INTO Departments (department_id, department_name, department_head)
 VALUES,  
@@ -145,7 +145,7 @@ VALUES,
 (10,' Departamentul de Sociologie',' Roxana Marinescu');``
   
 
-## Inserting Professors
+### Inserting Professors
 
 ``INSERT INTO Professors (professor_id, professor_name, professor_email, department_id)
 VALUES,
@@ -170,11 +170,11 @@ VALUES,
 (19,' Mihai Popescu',' mihai.popescu@facultate.ro',9),
 (20,' Roxana Petrescu',' roxana.petrescu@facultate.ro',10);``
 
-## Insert professor
+### Insert professor
 ``INSERT INTO Professors (professor_id, professor_name, professor_email, date_of_birth, department_id)
 VALUES (21,'Tudor Vianu', 'tudor.vianu@facultate.ro','1898-01-08',1);``
 
-## Inserting Students
+### Inserting Students
 
 ``INSERT INTO Students (student_id, student_name, student_email, date_of_birth)
 VALUES,
@@ -229,7 +229,7 @@ VALUES,
 (49,' Christopher Miller ',' christopher.miller@s.facultate.ro','1996-4-21'),
 (50,' Joel Thomas ',' joel.thomas@s.facultate.ro','2001-7-2');``
 
-## Inserting Objects (Courses)
+### Inserting Objects (Courses)
 
 ``INSERT INTO Objects (object_id, object_name, object_description)
 VALUES,
@@ -264,7 +264,7 @@ VALUES,
 (29,'Genetică umană',' Duis aute irure dolor in reprehenderit in voluptate velit esse'),
 (30,'Limbajul simbolic creștin',' Excepteur sint occaecat cupidatat non proident, sunt in culpa');``
  
-## Inserting Grades
+### Inserting Grades
 
 ``INSERT INTO Grades (grade_id, student_id, object_id, professor_id, grade_value, grade_date)
 VALUES,
@@ -281,7 +281,7 @@ VALUES,
 (11, 6, 9, 9, 88.0, '2024-05-30'),
 (12, 6, 10, 10, 79.5, '2024-06-15');``
 
-## Inserting Enrollments
+### Inserting Enrollments
 
 ``INSERT INTO Enrollments (enrollment_id, student_id, object_id, enrollment_date, completion_status)
 VALUES,
@@ -302,7 +302,7 @@ VALUES,
 (15, 8, 3, '2024-03-20', 'completed'),
 (16, 8, 4, '2024-03-25', 'in progress');``
 
-## Inserting Assessments
+### Inserting Assessments
 
 ``INSERT INTO Assessments (assessment_id, object_id, assessment_name, assessment_date, total_points)
 VALUES,
@@ -319,7 +319,7 @@ VALUES,
 (11, 6, 'Evaluare Practica', '2024-04-15', 50),
 (12, 6, 'Examen Final', '2024-06-15', 150);``
        
-## Inserting Scores
+### Inserting Scores
 
 ``INSERT INTO Scores (score_id, assessment_id, student_id, score_value)
 VALUES,
@@ -346,7 +346,7 @@ UPDATE departments SET department_name = 'Departamentul de Informatică' WHERE d
 
 ## DQL (Data Query Language)
 
-In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:
+In order to simulate various scenarios that might happen in real life I created the following queries that would cover multiple potential real-life situations:   
 ``SELECT * FROM departments;``  
 ``SELECT department_name, department_head FROM departments;``        
 ``SELECT * FROM Students;``  
@@ -364,62 +364,62 @@ In order to simulate various scenarios that might happen in real life I created 
 ``SELECT assessment_name, assessment_date, total_points FROM Assessments;``  
 ``SELECT assessment_id, student_id, score_value FROM Scores;``
 
-## Select students with a specific name
+### Select students with a specific name
 ``SELECT * FROM Students WHERE student_name =' ' Albert Parker ';``
 
-## Select professors from a specific department
+### Select professors from a specific department
 ``SELECT * FROM Professors WHERE department_id = 1;``
 
-## Select grades higher than 80
+### Select grades higher than 80
 ``SELECT * FROM Grades WHERE grade_value > 80;``
 
-## Select assessments with 'Final' in the name
+### Select assessments with 'Final' in the name
 ``SELECT * FROM Assessments WHERE assessment_name LIKE '%Final%';``
 
-## Select enrollments completed in 2024 
+### Select enrollments completed in 2024 
 ``SELECT * FROM Enrollments WHERE completion_status = 'completed' AND enrollment_date >= '2024-01-01' AND enrollment_date < '2024-12-31';``  
 ``SELECT * FROM Enrollments WHERE completion_status = 'in progress' AND (enrollment_date >= '2024-01-01' OR enrollment_date < '2024-12-31');`` 
 
-## Count number of students
+### Count number of students
 ``SELECT COUNT(*) AS total_students FROM Students;``
 
-## Calculate average grade value 
+### Calculate average grade value 
 ``SELECT AVG(grade_value) AS average_grade FROM Grades;``
 
-## Find maximum score value in assessments
+### Find maximum score value in assessments
 ``SELECT MAX(score_value) AS max_score FROM Scores;``
 
-## Calculate total points for all assessments in an object
+### Calculate total points for all assessments in an object
 ``SELECT object_id, SUM(total_points) AS total_points FROM Assessments GROUP BY object_id;``
 
-## Inner Join: Get student names and their grades
+### Inner Join: Get student names and their grades
 ``SELECT s.student_name, g.grade_value
 FROM Students s
 INNER JOIN Grades g ON s.student_id = g.student_id;``
 
-## Left Join: Get all students and their grades (including students without grades)
+### Left Join: Get all students and their grades (including students without grades)
 ``SELECT s.student_name, COALESCE(g.grade_value, 'N/A') AS grade_value
 FROM Students s
 LEFT JOIN Grades g ON s.student_id = g.student_id;``
 
-## Right Join: Get all grades and their corresponding students (including grades without students)
+### Right Join: Get all grades and their corresponding students (including grades without students)
 ``SELECT COALESCE(s.student_name, 'N/A') AS student_name, g.grade_value
 FROM Students s
 RIGHT JOIN Grades g ON s.student_id = g.student_id;``
 
-## Order students by date of birth, oldest first
+### Order students by date of birth, oldest first
 ``SELECT * FROM Students ORDER BY date_of_birth ASC;``
 
-## Order grades by grade value, highest first
+### Order grades by grade value, highest first
 ``SELECT * FROM Grades ORDER BY grade_value DESC;``
 
-##Limit the number of results returned
+### Limit the number of results returned
 ``SELECT * FROM Objects LIMIT 10;``
 
-## Order by assessment date and limit results
+### Order by assessment date and limit results
 ``SELECT * FROM Assessments ORDER BY assessment_date DESC LIMIT 5;``
 
-## Select students enrolled in both 'Generații și războaie culturale' and 'Abandon–atașament-prevenție și intervenție-Consiliere' 
+### Select students enrolled in both 'Generații și războaie culturale' and 'Abandon–atașament-prevenție și intervenție-Consiliere' 
 ``SELECT s.student_name, o.object_name
 FROM Students AS s
 INNER JOIN Enrollments AS e 
@@ -427,14 +427,14 @@ ON s.student_id = e.student_id
 JOIN Objects AS o ON e.object_id = o.object_id
 WHERE o.object_name IN ('Generații și războaie culturale', 'Abandon–atașament-prevenție și intervenție-Consiliere');``
 
-## Select students who scored above 80 in 'Examen Final ' or 'Proiect de curs 1'
+### Select students who scored above 80 in 'Examen Final ' or 'Proiect de curs 1'
 ``SELECT s.student_name, a.assessment_name, sc.score_value
 FROM Students s
 JOIN Scores sc ON s.student_id = sc.student_id
 JOIN Assessments a ON sc.assessment_id = a.assessment_id
 WHERE a.assessment_name IN ('Examen Final', 'Proiect de Curs') AND sc.score_value > 80;``
 
-## subquery to find the students with the highest grade
+### Subquery to find the students with the highest grade
 ``SELECT student_id, student_name
 FROM Students
 WHERE student_id IN (
@@ -443,7 +443,7 @@ WHERE student_id IN (
     WHERE grade_value = (SELECT MAX(grade_value) FROM Grades)
 );``
 
-## subquery to calculate the average score by object
+### Subquery to calculate the average score by object
 ``SELECT object_name, AVG(score_value) AS average_score
 FROM Objects
 JOIN Assessments ON Objects.object_id = Assessments.object_id
