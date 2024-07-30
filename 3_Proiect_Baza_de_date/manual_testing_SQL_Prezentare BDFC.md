@@ -12,9 +12,9 @@ Database description: **The purpose of this database is to manage the teaching a
 ## Database Schema
 
 You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
-     
-<center><ul><img width="703" alt="BDFC_Reverse engineering" src="https://github.com/constantinivancu/Proiect-pentru-IT-Factory/assets/168174492/eed44531-e3b3-48ac-9bfa-f9c535826e62">
-</ul></center></li><br>
+
+![BDFC](https://github.com/constantinivancu/Proiect-pentru-IT-Factory/blob/main/3_Proiect_Baza_de_date/BDFC_Reverse%20engineering.png)
+
 
 ### The tables are connected in the following way:
 1. Table **Departments** is connected with table **Professors** through a 1:n relationship which was implemented through Departments.
