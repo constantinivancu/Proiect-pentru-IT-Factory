@@ -2,9 +2,9 @@
 
 The scope of this project is to use all the SQL knowledge gained throught the Software Testing course and apply them in practice.
 
-Application under test: **BDFC**
+# Application under test: **BDFC** 
 
-Tools used: **MySQL Workbench**
+### Tools used: MySQL Workbench
 
 Database description: **The purpose of this database is to manage the teaching activity within an imaginary faculty.**
 
@@ -34,7 +34,7 @@ The tables are connected in the following way:
 <li> Table <b>Assessments</b> is connected with table <b>Scores</b> through a 1:n relationship which was implemented through Assessments.assessment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY as a primary key and Scores.assessment_id INT FOREIGN KEY as a foreign key.</li>
 
 <br>
-<b>Database Queries</b>
+## Database Queries
 
 
   
