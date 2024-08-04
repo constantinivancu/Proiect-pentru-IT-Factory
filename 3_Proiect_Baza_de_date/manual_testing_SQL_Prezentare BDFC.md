@@ -110,15 +110,15 @@ Create *Objects (Courses)* table
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );``
 
-  ### After the database and the tables have been created, a few **ALTER** instructions were written in order to update the structure of the database, as described below:
+  ### After the database and the tables have been created, a few **ALTER** instructions were written in order to update the structure of the database, as described below:  
   
-### Adding the date_of_birth column to professors table
- ``ALTER TABLE professors ADD column date_of_birth DATE;``
-### Change the name of the professors column to teachers 
- ``ALTER TABLE professors RENAME  to `teachers`;``
-### Renaming the date_of_birth column to zi de nastere
-``ALTER TABLE professors RENAME column `date_of_birth` to `zi de nastere`;``
- ### Delete a column
+- **Adding the date_of_birth column to professors table**
+ ``ALTER TABLE professors ADD column date_of_birth DATE;``  
+- **Change the name of the professors column to teachers** 
+ ``ALTER TABLE professors RENAME  to `teachers`;``  
+- **Renaming the date_of_birth column to zi de nastere**
+``ALTER TABLE professors RENAME column `date_of_birth` to `zi de nastere`;``  
+- **Delete a column**
 ``ALTER TABLE professors DROP column `zi de nastere`;``
 
   
